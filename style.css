@@ -1,0 +1,135 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+/* algemaan */
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f7fcff;
+    color: #010e73;
+}
+h1 {
+    font-family: "Leckerli One", cursive;
+    font-size: 36px;
+    text-align: center;
+}
+h2 {
+    font-size: 28px;
+    font-family: "Leckerli One", cursive;
+}
+
+h4 {
+    font-size: 24px;
+    margin: 8px 0 0 0;
+}
+
+/* kalender */
+.chart {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+/* dagen */
+.days {
+    margin-top: 8px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+/* bars  */
+.bar {
+    width: 27px;
+    background-color: #010E73;
+    border-radius: 10px 10px 2px 2px; 
+    height: 5px;
+}
+.bar.orange {
+    background-color: #C77800;
+    height: 50px;
+}
+.bar.green {
+    background-color: #03831B;
+    height: 70px;
+}
+
+
+/* recent  */
+.recent {
+    display: flex;
+    justify-content: space-between;
+    background: #03831B;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* buttons */
+.button-container button {
+    padding: 15px;
+    border: none;
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.red {
+    background: #890101;
+    color: white;
+}
+.orange {
+    background: #C77800;
+    color: white;
+}
+.green {
+    background: #03831B;
+    color: white;
+}
+
+
+input{
+    height: 25px;
+    background-color: #f7fcff;
+    border: 2px solid #010e73; 
+    border-radius: 5px; 
+    outline: none; 
+}
+
+.save-button {
+    font-family: "Leckerli One", cursive;
+    background-color: #f7fcff;
+    border: 2px solid #010e73; 
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    
+}
+
+.save-button a {
+    text-decoration: none;
+    color: #010E73;
+}
+
+.add-button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    font-size: 40px;
+    background-color: #f7fcff;
+    color: #010e73;
+    border: 2px solid #010e73; 
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+.back-button i {
+    font-size: 25px;
+}
