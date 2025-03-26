@@ -117,17 +117,16 @@ input{
 }
 
 .add-button {
-    display: block;
-    width: 50px;
-    height: 50px;
+    display: inline-block;
+    font-family: "Leckerli One", cursive;;
+    padding: 5px 10px 5px 10px;
     margin: 20px auto;
-    font-size: 40px;
+    font-size: 20px;
     background-color: #f7fcff;
     color: #010e73;
     border: 2px solid #010e73; 
     border-radius: 5px;
     cursor: pointer;
-    text-align: center;
     text-decoration: none;
 }
 .back-button i {
