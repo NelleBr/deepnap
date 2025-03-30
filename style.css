@@ -108,13 +108,9 @@ input{
     border-radius: 5px;
     font-size: 24px;
     cursor: pointer;
-    
-}
-
-.save-button a {
-    text-decoration: none;
     color: #010E73;
 }
+
 
 .add-button {
     display: inline-block;
