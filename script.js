@@ -16,10 +16,9 @@ document.querySelector(".green").addEventListener("click", () => {
   setSleepQuality("Very well");
 });
 
-document.querySelector(".save-button").addEventListener("click", saveData);
+document.querySelector(".save-button").addEventListener("click", (e) => {
+  e.preventDefault();
 
-function saveData(event) {
-  event.preventDefault();
   let date = document.querySelector("#sleep-date").value;
   let hours = document.querySelector("#sleep-hours").value;
 
@@ -29,5 +28,18 @@ function saveData(event) {
     quality: selectedSleepQuality,
   };
 
-  localStorage.setItem("sleep", JSON.stringify(sleep));
-}
+  let sleepData = JSON.parse(localStorage.getItem("sleepData")) || [];
+
+  // Checken of deze datum al bestaat in mijn local storage
+  let index = sleepData.findIndex((entry) => entry.date === date);
+
+  if (index !== -1) {
+    // Als datum bestaat dan wordt deze overschreven
+    sleepData[index] = sleep;
+  } else {
+    // Zo niet dan wordt er een nieuwe toegevoegd
+    sleepData.push(sleep);
+  }
+
+  localStorage.setItem("sleepData", JSON.stringify(sleepData));
+});
