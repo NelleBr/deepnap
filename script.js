@@ -42,4 +42,7 @@ document.querySelector(".save-button").addEventListener("click", (e) => {
   }
 
   localStorage.setItem("sleepData", JSON.stringify(sleepData));
+
+  // Terug naar index.html
+  window.location.href = "index.html";
 });
