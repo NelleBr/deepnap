@@ -26,19 +26,18 @@ h4 {
 }
 
 /* kalender */
-.chart {
-    height: 100px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
+.chart,
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: end;
 }
 
-/* dagen */
-.days {
-    margin-top: 8px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
+.chart {
+    height: 100px;
+    margin-bottom: 8px;
 }
 
 /* bars  */
