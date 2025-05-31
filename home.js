@@ -64,12 +64,8 @@ function updateBars() {
   let bars = document.querySelectorAll(".chart .bar");
   let data = JSON.parse(localStorage.getItem("sleepData")) || [];
 
-  // elke entry in een lijst met de datum erbij, zodat het later makkelijk terug te vinden is
-  let dataMap = {};
-  data.forEach((entry) => {
-    dataMap[entry.date] = entry;
-  });
 
+  let dataMap = {}
   // bepaal de startdatum dan de huidige week (maandag)
   let today = new Date();
   let dayOfWeek = today.getDay(); // Zondag = 0, maandag = 1 ...  -> javascript ziet zondag als de eerste dag van de week
@@ -81,6 +77,13 @@ function updateBars() {
   }
   let monday = new Date(today);
   monday.setDate(today.getDate() + difference);
+
+  data.forEach((entry) => {
+    let entryDate = new Date(entry.date);
+    if (entryDate >= monday) {
+      dataMap[entry.date] = entry;
+    }
+  });
 
   // loop over de 7 dagen van deze week (ma tot zo)
   for (let i = 0; i < 7; i++) {
