@@ -28,7 +28,7 @@ function displayRecentSleep() {
   data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // er mogen maar 2 recents worden getoont
-  let recentTwo = data.slice(0, 2); // slice => neemt de eerste 2 items uit de array "data"
+  let recentTwo = data.slice(0, 3); // slice => neemt de eerste 3 items uit de array "data"
 
   recentTwo.forEach((entry) => {
     let div = document.createElement("div");
