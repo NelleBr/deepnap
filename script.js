@@ -1,19 +1,27 @@
 let selectedSleepQuality = "Not selected";
 
-function setSleepQuality(quality) {
+function setSleepQuality(quality, button) {
   selectedSleepQuality = quality;
+
+  // verwijder class selected van alle buttons
+  document.querySelectorAll(".button-container button").forEach((btn) => {
+    btn.classList.remove("selected");
+  });
+
+  // selected toevoegen aan de knop die geselcteerd is
+  button.classList.add("selected");
 }
 
-document.querySelector(".red").addEventListener("click", () => {
-  setSleepQuality("Very bad");
+document.querySelector(".red").addEventListener("click", (event) => {
+  setSleepQuality("Very bad", event.target);
 });
 
-document.querySelector(".orange").addEventListener("click", () => {
-  setSleepQuality("Oké");
+document.querySelector(".orange").addEventListener("click", (event) => {
+  setSleepQuality("Oké", event.target);
 });
 
-document.querySelector(".green").addEventListener("click", () => {
-  setSleepQuality("Very well");
+document.querySelector(".green").addEventListener("click", (event) => {
+  setSleepQuality("Very well", event.target);
 });
 
 document.querySelector(".save-button").addEventListener("click", (e) => {
