@@ -54,3 +54,37 @@ document.querySelector(".save-button").addEventListener("click", (e) => {
   // Terug naar index.html
   window.location.href = "index.html";
 });
+
+function limitDatePickerToThisWeek() {
+  let dateInput = document.querySelector("#sleep-date");
+  let today = new Date();
+  let dayOfWeek = today.getDay(); // zondag = 0, maandag = 1, ... -> javascript ziet zondag als de eerste dag van de week
+
+  // maandag berekenen
+  let difference;
+  if (dayOfWeek === 0) {
+    difference = -6; // zondag, dus 6 dagen terug naar maandag
+  } else {
+    difference = 1 - dayOfWeek; // bijvoorbeeld: woensdag (3) -> 1 - 3 = -2 dagen terug
+  }
+  let monday = new Date(today);
+  monday.setDate(today.getDate() + difference);
+
+  // zondag berekenen
+  let sunday = new Date(monday);
+  sunday.setDate(monday.getDate() + 6);
+
+  // de datum schrijven zoals dit -> yyyy-mm-dd
+  let formatDate = (date) => {
+    let yyyy = date.getFullYear();
+    let mm = (date.getMonth() + 1).toString().padStart(2, "0"); // padStart -> zorgt dat de maand altijd uit twee cijfers bestaat, bijvoorbeeld "01" in plaats van "1"
+    let dd = date.getDate().toString().padStart(2, "0");
+    return `${yyyy}-${mm}-${dd}`;
+  };
+
+  dateInput.min = formatDate(monday);
+  dateInput.max = formatDate(sunday);
+}
+
+// zorgt dat het wordt uitgevoerd
+limitDatePickerToThisWeek();
